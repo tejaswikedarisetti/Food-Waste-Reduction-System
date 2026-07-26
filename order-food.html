@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food - User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadOrders()">
+
+    <div class="order-container">
+        <h1>Place a Food Order</h1>
+
+        <!-- Order Form -->
+        <form id="orderForm" onsubmit="placeOrder(event)">
+            <label for="orderItem">Food Item:</label>
+            <input type="text" id="orderItem" required>
+
+            <label for="orderQuantity">Quantity (kg):</label>
+            <input type="number" id="orderQuantity" min="1" required>
+
+            <label for="orderLocation">Location:</label>
+            <input type="text" id="orderLocation" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+
+        <h2>Your Placed Orders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Quantity (kg)</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="orderList"></tbody>
+        </table>
+
+        <button class="back-btn" onclick="location.href='user-dashboard.html'">Back to Dashboard</button>
+    </div>
+
+    <script src="order-food.js"></script>
+</body>
+</html>

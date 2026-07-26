@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkUserLogin()">
+
+    <div class="dashboard-container">
+        <h1>User Dashboard</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+
+        <div class="dashboard-options">
+            <button onclick="location.href='donate-food.html'">Donate Food</button>
+            <button onclick="location.href='order-food.html'">Order Food</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>

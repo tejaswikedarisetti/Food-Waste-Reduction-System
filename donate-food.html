@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Donate Food</h1>
+        <form id="donationForm" onsubmit="handleSubmit(event)">
+            <label for="donorName">Your Name:</label>
+            <input type="text" id="donorName" name="donorName" placeholder="Your Name" required>
+
+            <label for="foodItem">Food Item:</label>
+            <input type="text" id="foodItem" name="foodItem" placeholder="Food Item" required>
+
+            <label for="foodQuantity">Quantity (kg):</label>
+            <input type="number" id="foodQuantity" name="foodQuantity" placeholder="Quantity (kg)" min="1" required>
+
+            <label for="donorContact">Contact Number:</label>
+            <input type="tel" id="donorContact" name="donorContact" placeholder="Contact Number" pattern="[0-9]{10}" required>
+
+            <label for="pickupAddress">Pickup Address:</label>
+            <textarea id="pickupAddress" name="pickupAddress" placeholder="Pickup Address" rows="3" required></textarea>
+
+            <button type="submit">Donate</button>
+        </form>
+
+        <p id="donationMessage" style="display:none; color: green;">Thank you for your donation!</p>
+
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent page reload
+            // Normally here you would handle the form submission (e.g., send to backend)
+            document.getElementById("donationMessage").style.display = "block";
+            document.getElementById("donationForm").reset();
+        }
+    </script>
+
+</body>
+</html>
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        // Get form values
+        const donorName = document.getElementById("donorName").value;
+        const foodItem = document.getElementById("foodItem").value;
+        const foodQuantity = document.getElementById("foodQuantity").value;
+        const donorContact = document.getElementById("donorContact").value;
+        const pickupAddress = document.getElementById("pickupAddress").value;
+
+        // Create a donation object
+        const donation = {
+            donorName,
+            foodItem,
+            foodQuantity,
+            donorContact,
+            pickupAddress,
+            status: "Pending"
+        };
+
+        // Retrieve existing donations or start with an empty array
+        let donations = JSON.parse(localStorage.getItem("donations")) || [];
+
+        // Add new donation
+        donations.push(donation);
+
+        // Save back to localStorage
+        localStorage.setItem("donations", JSON.stringify(donations));
+
+        // Show thank you message
+        document.getElementById("donationMessage").style.display = "block";
+
+        // Reset the form
+        document.getElementById("donationForm").reset();
+    }
+</script>

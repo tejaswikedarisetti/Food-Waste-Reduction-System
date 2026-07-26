@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Login - Food Waste Reduction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Next User Login</h2>
+        <form onsubmit="return nextLogin()">
+            <input type="text" id="nextUsername" placeholder="Username" required>
+            <input type="password" id="nextPassword" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p id="next-error-message" class="error"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
