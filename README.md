@@ -32,7 +32,7 @@ The Food Waste Reduction System allows users to donate surplus food through a si
 
 | Category | Technologies |
 |----------|--------------|
-| Frontend | HTML5, CSS3, JavaScript |
+| Frontend | HTML, CSS, JavaScript |
 | Storage | Local Storage |
 | IDE | Visual Studio Code |
 | Version Control | Git & GitHub |
@@ -163,8 +163,8 @@ Right-click on **index.html** and select **Open with Live Server**.
 
 ## 🎯 Learning Outcomes
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
 - DOM Manipulation
 - Local Storage
